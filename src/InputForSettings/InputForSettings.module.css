@@ -1,0 +1,20 @@
+.InputForSettings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 50%;
+}
+
+.inputTitle {
+  font-weight: 600;
+  font-size: 35px;
+  color: deepskyblue;
+}
+
+input {
+  width: 30%;
+
+  font-size: 35px;
+  text-align: center;
+}
