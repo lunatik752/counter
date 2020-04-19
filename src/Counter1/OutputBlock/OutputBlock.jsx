@@ -1,14 +1,14 @@
 import React from 'react';
 import style from './OutputBlock.module.css';
-import ButtonsArea from "../../ButtonsArea/ButtonsArea";
-import InputsArea from "../../InputsArea/InputsArea";
+import ButtonsAreaOutputBlock from "./ButtonsAreaOutputBlock/ButtonsAreaOutputBlock";
+import OutputValue from "./OutputValue/OutputValue";
 
 
 const OutputBlock = () => {
     return (
         <div className={style.outputBlock}>
-            <InputsArea/>
-            <ButtonsArea />
+            <OutputValue/>
+            <ButtonsAreaOutputBlock />
         </div>
     );
 }

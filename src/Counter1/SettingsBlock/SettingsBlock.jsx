@@ -1,14 +1,14 @@
 import React from 'react';
 import style from './SettingsBlock.module.css';
-import ButtonsArea from "../../ButtonsArea/ButtonsArea";
-import InputsArea from "../../InputsArea/InputsArea";
+import ButtonsAreaSettingsBlock from "./ButtonsAreaSettingsBlock/ButtonsAreaSettingsBlock";
+import InputsAreaSettingsBlock from "./InputsAreaSettingsBlock/InputsAreaSettingsBlock";
 
 
 const SettingsBlock = () => {
     return (
         <div className={style.settingsBlock}>
-            <InputsArea/>
-            <ButtonsArea/>
+            <InputsAreaSettingsBlock/>
+            <ButtonsAreaSettingsBlock/>
         </div>
     );
 }
