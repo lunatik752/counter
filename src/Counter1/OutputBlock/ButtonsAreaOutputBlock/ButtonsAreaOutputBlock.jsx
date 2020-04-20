@@ -3,11 +3,17 @@ import style from './ButtonsAreaOutputBlock.module.css';
 import Button from "../../../Button/Button";
 
 
-const ButtonsAreaOutputBlock = () => {
+const ButtonsAreaOutputBlock = (props) => {
     return (
         <div className={style.buttonsArea}>
-            <Button title={'inc'}/>
-            <Button title={'reset'}/>
+            <Button title={'inc'}
+                    onClick={() => {props.changeCounterValue()}}
+                    disabled={props.state.initialValue === props.state.counterValueMax}
+            />
+            <Button title={'reset'}
+                    onClick={() => {props.reset()}}
+
+            />
         </div>
 
     );

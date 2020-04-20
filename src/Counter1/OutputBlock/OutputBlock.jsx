@@ -4,11 +4,13 @@ import ButtonsAreaOutputBlock from "./ButtonsAreaOutputBlock/ButtonsAreaOutputBl
 import OutputValue from "./OutputValue/OutputValue";
 
 
-const OutputBlock = () => {
+const OutputBlock = (props) => {
     return (
         <div className={style.outputBlock}>
-            <OutputValue/>
-            <ButtonsAreaOutputBlock />
+            <OutputValue state={props.state}/>
+            <ButtonsAreaOutputBlock state={props.state}
+                                    reset={props.reset}
+                                    changeCounterValue={props.changeCounterValue}/>
         </div>
     );
 }

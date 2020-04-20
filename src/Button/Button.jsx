@@ -7,8 +7,8 @@ const Button = (props) => {
     return (
         <div>
             <button className={style.button}
-                // onClick={props.onClick}
-                // disabled={props.disabled}
+                onClick={props.onClick}
+                disabled={props.disabled}
             >{props.title}</button>
         </div>
     );

@@ -4,11 +4,13 @@ import SettingsBlock from "./SettingsBlock/SettingsBlock";
 import OutputBlock from "./OutputBlock/OutputBlock";
 
 
-const Counter1 = () => {
+const Counter1 = (props) => {
     return (
         <div className={style.counterWrapper}>
             <SettingsBlock/>
-            <OutputBlock/>
+            <OutputBlock state={props.state}
+                         reset={props.reset}
+                         changeCounterValue={props.changeCounterValue}/>
         </div>
     );
 };

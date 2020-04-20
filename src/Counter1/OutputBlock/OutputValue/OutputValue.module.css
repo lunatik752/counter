@@ -16,3 +16,9 @@
   font-weight: 600;
 
 }
+
+.outputValueMax {
+  color: red;
+  font-size: 100px;
+  font-weight: bolder;
+}
