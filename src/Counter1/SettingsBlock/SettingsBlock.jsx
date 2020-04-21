@@ -4,10 +4,12 @@ import ButtonsAreaSettingsBlock from "./ButtonsAreaSettingsBlock/ButtonsAreaSett
 import InputsAreaSettingsBlock from "./InputsAreaSettingsBlock/InputsAreaSettingsBlock";
 
 
-const SettingsBlock = () => {
+const SettingsBlock = (props) => {
     return (
         <div className={style.settingsBlock}>
-            <InputsAreaSettingsBlock/>
+            <InputsAreaSettingsBlock state={props.state}
+                                     updateNewMaxValue={props.updateNewMaxValue}
+                                     updateNewStartValue={props.updateNewStartValue}/>
             <ButtonsAreaSettingsBlock/>
         </div>
     );

@@ -4,14 +4,17 @@ import Button from "../../../Button/Button";
 
 
 const ButtonsAreaOutputBlock = (props) => {
+
+
+
     return (
         <div className={style.buttonsArea}>
             <Button title={'inc'}
                     onClick={() => {props.changeCounterValue()}}
-                    disabled={props.state.initialValue === props.state.counterValueMax}
+                    disabled={props.state.currentValue === props.state.maxValue}
             />
             <Button title={'reset'}
-                    onClick={() => {props.reset()}}
+                    onClick={props.reset}
 
             />
         </div>

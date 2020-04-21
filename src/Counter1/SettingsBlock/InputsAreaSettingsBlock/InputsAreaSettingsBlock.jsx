@@ -3,11 +3,11 @@ import style from './InputsAreaSettingsBlock.module.css';
 import InputForSettings from "./InputForSettings/InputForSettings";
 
 
-const InputsAreaSettingsBlock = () => {
+const InputsAreaSettingsBlock = (props) => {
     return (
         <div className={style.inputsArea}>
-          <InputForSettings title={'max value'}/>
-          <InputForSettings title={'start value'}/>
+          <InputForSettings title={'max value'} inputValue={props.state.maxValue} onChange={props.updateNewMaxValue}/>
+          <InputForSettings title={'start value'} inputValue={props.state.startValue} onChange={props.updateNewStartValue}/>
         </div>
 
     );

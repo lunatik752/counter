@@ -7,7 +7,10 @@ import OutputBlock from "./OutputBlock/OutputBlock";
 const Counter1 = (props) => {
     return (
         <div className={style.counterWrapper}>
-            <SettingsBlock/>
+            <SettingsBlock state={props.state}
+                           updateNewMaxValue={props.updateNewMaxValue}
+                           updateNewStartValue={props.updateNewStartValue}
+            />
             <OutputBlock state={props.state}
                          reset={props.reset}
                          changeCounterValue={props.changeCounterValue}/>
