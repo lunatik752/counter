@@ -5,12 +5,16 @@ import InputsAreaSettingsBlock from "./InputsAreaSettingsBlock/InputsAreaSetting
 
 
 const SettingsBlock = (props) => {
+
+
     return (
         <div className={style.settingsBlock}>
             <InputsAreaSettingsBlock state={props.state}
+                                     classInput={props.classInput}
                                      updateNewMaxValue={props.updateNewMaxValue}
                                      updateNewStartValue={props.updateNewStartValue}/>
-            <ButtonsAreaSettingsBlock/>
+            <ButtonsAreaSettingsBlock onButtonSetClick={props.onButtonSetClick}
+                                      disabled={props.state.disabledSetButton}/>
         </div>
     );
 }

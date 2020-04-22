@@ -12,12 +12,17 @@
   color: deepskyblue;
 }
 
-input {
+.input {
   width: 30%;
 
   font-size: 35px;
   text-align: center;
+
   border: 2px solid deepskyblue;
   border-radius: 5px;
+}
 
+.error {
+  border: 2px solid red;
+  background-color: #f88787;
 }

@@ -5,15 +5,15 @@ import style from './InputForSettings.module.css';
 const InputForSettings = (props) => {
 
     let onValueChange = (e) => {
-        let num = Number(e.currentTarget.value);
-        props.onChange(num);
+        let value = Number(e.currentTarget.value);
+        props.onChange(value);
     };
 
 
     return (
         <div className={style.inputForSettings}>
             <span className={style.inputTitle}>{props.title}</span>
-            <input type='number' onChange={onValueChange}  value={props.inputValue}/>
+            <input className={props.classNameInput} type='number' onChange={onValueChange}  value={props.inputValue}/>
         </div>
 
     );

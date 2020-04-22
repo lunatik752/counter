@@ -4,7 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import {Route} from "react-router-dom";
 import Counter2 from "./Counter2/Counter2";
 import Counter1 from "./Counter1/Counter1";
-import style from "./Counter1/OutputBlock/OutputValue/OutputValue.module.css";
+
 
 class App extends React.Component {
 
@@ -12,13 +12,15 @@ class App extends React.Component {
         startValue: 0,
         maxValue: 5,
         currentValue: 0,
-        counterClass: style.outputValue
+        disabledSetButton: true,
+        disabledCountButton: false,
+        disabledResetButton: false
     };
 
     reset = () => {
         this.setState({
                 currentValue: this.state.startValue,
-                counterClass: style.outputValue
+                disabledCountButton: false
             }
         )
     };
@@ -30,9 +32,8 @@ class App extends React.Component {
         });
         if (this.state.currentValue === this.state.maxValue - 1) {
             this.setState({
-                    counterClass: style.outputValueMax
-                }
-            )
+                disabledCountButton: true
+            });
         }
     };
 
@@ -40,16 +41,30 @@ class App extends React.Component {
         this.setState({
             startValue: newValue,
             currentValue: "enter values and press 'set'",
-            counterClass: style.outputValueText,
-        })
+            disabledSetButton: false,
+            disabledCountButton: true,
+            disabledResetButton: false
+        });
     };
 
     updateNewMaxValue = (newValue) => {
         this.setState({
             maxValue: newValue,
-            currentValue: "enter values and press 'set'"
+            currentValue: "enter values and press 'set'",
+            disabledSetButton: false,
+            disabledCountButton: true,
+            disabledResetButton: false
         })
     };
+
+    onButtonSetClick = () => {
+        this.setState({
+            currentValue: this.state.startValue,
+            disabledSetButton: true
+        })
+
+    };
+
 
     render = () => {
 
@@ -63,6 +78,7 @@ class App extends React.Component {
                                                                 changeCounterValue={this.changeCounterValue}
                                                                 updateNewStartValue={this.updateNewStartValue}
                                                                 updateNewMaxValue={this.updateNewMaxValue}
+                                                                onButtonSetClick={this.onButtonSetClick}
 
                 />}/>
                 <Route path='/counter2' render={() => <Counter2/>}/>
