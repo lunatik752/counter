@@ -3,7 +3,6 @@ import style from './InputsAreaSettingsBlock.module.css';
 import InputForSettings from "./InputForSettings/InputForSettings";
 
 
-
 const InputsAreaSettingsBlock = (props) => {
 
     return (

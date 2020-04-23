@@ -6,7 +6,6 @@ import Button from "../../../Button/Button";
 const ButtonsAreaOutputBlock = (props) => {
 
 
-
     return (
         <div className={style.buttonsArea}>
             <Button title={'inc'}
