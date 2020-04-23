@@ -12,11 +12,10 @@ const Counter1 = (props) => {
                            updateNewMaxValue={props.updateNewMaxValue}
                            updateNewStartValue={props.updateNewStartValue}
                            onButtonSetClick={props.onButtonSetClick}
-
             />
             <OutputBlock state={props.state}
-                         reset={props.reset}
-                         changeCounterValue={props.changeCounterValue}/>
+                         changeCounterValue={props.changeCounterValue}
+                         reset={props.reset}/>
         </div>
     );
 };

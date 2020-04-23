@@ -15,6 +15,7 @@ const ButtonsAreaOutputBlock = (props) => {
             />
             <Button title={'reset'}
                     onClick={props.reset}
+                    disabled={props.state.disabledResetButton}
 
             />
         </div>

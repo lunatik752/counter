@@ -12,6 +12,9 @@ const OutputValue = (props) => {
             break;
         case "string":
             counterClass = counterClass + ' ' + style.outputValueText;
+            if (props.state.currentValue === "Incorrect value!"){
+                counterClass = counterClass +' ' + style.outputValueTextError
+            }
             break;
         default:
             break

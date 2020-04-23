@@ -14,7 +14,9 @@ class App extends React.Component {
         currentValue: 0,
         disabledSetButton: true,
         disabledCountButton: false,
-        disabledResetButton: false
+        disabledResetButton: false,
+        inputMaxValueError: false,
+        inputStartValueError: false,
     };
 
     reset = () => {
@@ -43,8 +45,26 @@ class App extends React.Component {
             currentValue: "enter values and press 'set'",
             disabledSetButton: false,
             disabledCountButton: true,
-            disabledResetButton: false
+            disabledResetButton: true,
+            inputStartValueError: false,
+            inputMaxValueError: false,
         });
+        if (newValue<0) {
+            this.setState({
+                currentValue: "Incorrect value!",
+                disabledSetButton: true,
+                disabledCountButton: true,
+                disabledResetButton: true,
+                inputStartValueError: true
+            });
+        } else if (newValue >= this.state.maxValue) {
+            this.setState({
+                currentValue: "Incorrect value!",
+                inputStartValueError: true,
+                inputMaxValueError: true,
+                disabledSetButton: true,
+            });
+        }
     };
 
     updateNewMaxValue = (newValue) => {
@@ -53,17 +73,39 @@ class App extends React.Component {
             currentValue: "enter values and press 'set'",
             disabledSetButton: false,
             disabledCountButton: true,
-            disabledResetButton: false
-        })
+            disabledResetButton: true,
+            inputMaxValueError: false,
+            inputStartValueError: false,
+        });
+        if (newValue<0) {
+            this.setState({
+                currentValue: "Incorrect value!",
+                disabledSetButton: true,
+                disabledCountButton: true,
+                disabledResetButton: true,
+                inputMaxValueError: true
+            });
+        }else if (newValue <= this.state.startValue) {
+            this.setState({
+                currentValue: "Incorrect value!",
+                inputStartValueError: true,
+                inputMaxValueError: true,
+                disabledSetButton: true,
+            });
+        }
     };
 
     onButtonSetClick = () => {
         this.setState({
             currentValue: this.state.startValue,
-            disabledSetButton: true
+            disabledSetButton: true,
+            disabledCountButton: false,
+            disabledResetButton: false,
         })
 
     };
+
+
 
 
     render = () => {

@@ -9,8 +9,8 @@ const OutputBlock = (props) => {
         <div className={style.outputBlock}>
             <OutputValue state={props.state}/>
             <ButtonsAreaOutputBlock state={props.state}
-                                    reset={props.reset}
-                                    changeCounterValue={props.changeCounterValue}/>
+                                    changeCounterValue={props.changeCounterValue}
+                                    reset={props.reset}/>
         </div>
     );
 }

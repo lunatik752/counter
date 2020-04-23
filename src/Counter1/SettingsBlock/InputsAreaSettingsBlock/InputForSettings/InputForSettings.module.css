@@ -20,6 +20,7 @@
 
   border: 2px solid deepskyblue;
   border-radius: 5px;
+  outline: none;
 }
 
 .error {
