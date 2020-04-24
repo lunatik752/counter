@@ -23,12 +23,12 @@ class Counter1 extends React.Component {
 
     saveState = () => {
         let stateAsString = JSON.stringify(this.state);
-        localStorage.setItem('startSettings', stateAsString)
+        localStorage.setItem('startSettingsCounter1', stateAsString)
     };
 
     restoreState = () => {
         let state = this.state;
-        let stateAsString = localStorage.getItem('startSettings');
+        let stateAsString = localStorage.getItem('startSettingsCounter1');
         if (stateAsString) {
             state = JSON.parse(stateAsString);
         }
@@ -139,6 +139,6 @@ class Counter1 extends React.Component {
             </div>
         );
     }
-};
+}
 
 export default Counter1;
